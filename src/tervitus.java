@@ -28,7 +28,6 @@ public class tervitus extends Application {
     }
 
     public void start(Stage primaryStage) throws Exception {
-        //See on start
         this.window = primaryStage;
         StackPane layout = new StackPane();
         Scene scene = new Scene(layout, 300.0D, 250.0D);
