@@ -1,6 +1,8 @@
 import javafx.application.Application;
+import javafx.scene.Scene;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -8,12 +10,21 @@ import javafx.stage.Stage;
  * kasutatud koodi aadressilt: https://www.youtube.com/watch?v=SvmSNbXQSnQ
  */
 public class toidupuu extends Application {
+
+    Stage Window;
+    TreeView<String> tree;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage){
+        Window = primaryStage;
+
         //* puu jupid
-        TreeView<String> puu;
         TreeItem<String> Juurikas, Piimatooted, Teraviljatooted, Rasvad, Proteiinid, Puuviljad, Juurikad, Vesi;
 
+        //* puud koos hoidev jupp
         Juurikas = new TreeItem<>();
         Juurikas.setExpanded(true);
 
@@ -37,10 +48,10 @@ public class toidupuu extends Application {
         makeBranch("mais (toores, konserv) 80 g", Teraviljatooted);
         makeBranch("1 keskmine maisitõlvik", Teraviljatooted);
         makeBranch("mais-hernes-paprika segu, 150 g", Teraviljatooted);
-        makeBranch("kartul 2 väikest v 1 keskmine", Teraviljatooted);
+        makeBranch("kartul 2 pisikest v 1 keskmine", Teraviljatooted);
 
         //Rasvad
-       Rasvad = makeBranch("Rasvad", Juurikas);
+        Rasvad = makeBranch("Rasvad", Juurikas);
         makeBranch("majonees, 1 tl", Rasvad);
         makeBranch("taimeõli, 1 tl", Rasvad);
         makeBranch("avokaado, 20 g", Rasvad);
@@ -77,12 +88,27 @@ public class toidupuu extends Application {
 
         //Vesi
         Vesi = makeBranch("Vesi", Juurikas);
+
+        //Puu loomine
+        tree = new TreeView<>(Juurikas);
+        tree.setShowRoot(false);
+
+
+        //Välimus
+        StackPane layout = new StackPane();
+        layout.getChildren().add(tree);
+        Scene scene= new Scene(layout, 300, 800);
+        Window.setScene(scene);
+        Window.show();
+    }
+    // Okste kokkutõmbamine
+    public TreeItem<String> makeBranch(String title, TreeItem<String>parent){
+        TreeItem<String> item = new TreeItem<>(title);
+        item.setExpanded(true);
+        parent.getChildren().add(item);
+        return item;
+
     }
 
-    private TreeItem<String> makeBranch(String piimatooted, TreeItem<String> juurikas) {
-
-
-        return juurikas;
-    }
 
 }
