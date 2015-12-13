@@ -1,14 +1,20 @@
 
 package Toidupaevik;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.TextAlignment;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +24,8 @@ public class Tervitus {
     Button button;
     Button button1;
     Button button2;
+    Button button3;
+    static boolean answer;
 
     Label resultLabel;
     Label resultLabel1;
@@ -27,10 +35,11 @@ public class Tervitus {
     private List<Punnid> intValueCheckboxList = new ArrayList<>();
     Stage primaryStage = new Stage();
 
-    Tervitus(){
+    Tervitus() {
         setupScene();
-        setupNupp ();
+        setupNupp();
     }
+
     private void setupNupp() {
         button.setOnAction((event) -> {
             calculate();
@@ -47,8 +56,54 @@ public class Tervitus {
                     }
                 }
         );
+        //selgitav aken (kasutatud koodi https://www.youtube.com/watch?v=SpL3EToqaXA
+        button3.setOnAction((event) -> {
+            boolean result = display("Selgitus", "Tegemist on abivahendiga kaalujälgijale.\n" +//kaldkriips+n lõikab teksti ja viib järgmisele reale
+                    "\n" +
+                    "Toiduainete gruppide kohal on toodud päevakogused portsjonites, mis tuleb ära süüa.\n" +
+                    "Kui neid ära ei söö, siis teed tervisle liiga.\n" +
+                    "\n " +
+                    "Kui sööd rohkem, siis kaalust alla ei võta\n" +
+                    "\n" +
+                    "Kui ekraanile tekib tekst, et oled söönud rohkem, kui..., no siis paisud.\n " +
+                    "\n" +
+                    "NB! lisaks toodud portsudele pead iga päev sööma veel 600 g või rohkem juurvilju\n" +
+                    "(ära muretse need kaloreid ei anna)\n" +
+                    "\n" +
+                    "Sa pead jooma 1,5 liitrit vett! ");
+
+            System.out.println(result);
+        });
+    }//järgnev osa on selgitava akna töös hoidmiseks
+    private boolean display(String title, String message) {
+        Stage window = new Stage();
+        window.initModality(Modality.APPLICATION_MODAL);
+        window.setTitle(title);
+        window.setMinHeight(400);//seab minimaalse ja maksimaalse akna suuruse, kui maks ei pane, läheb tekst üle ekraani laiali
+        window.setMinWidth(600);
+        window.setMaxHeight(500);
+        window.setMaxWidth(700);
+
+        Label label = new Label();
+        label.setText(message);
+        label.setWrapText(true);
+        label.setTextAlignment(TextAlignment.JUSTIFY);
+        Button closeButton = new Button("sulge");
+        closeButton.setOnAction((event) -> {
+            window.close();
+        });
+
+        VBox layout = new VBox(10.0D);
+        layout.getChildren().addAll(new Node[]{label, closeButton});
+        layout.setAlignment(Pos.CENTER);
+        Scene scene = new Scene(layout);
+        window.setScene(scene);
+        window.showAndWait();
+        return answer;
     }
-        private void setupScene() {
+// selgitava akna tegevus lõppes, läheb edasi põhiosa
+
+    private void setupScene() {
 
         resultLabel = new Label();
         resultLabel1 = new Label();
@@ -210,12 +265,15 @@ public class Tervitus {
         button2 = new Button("Tühista valik");
         GridPane.setConstraints(button2, 1, 16);
 
+        button3 = new Button("Kasutamisõpetus");
+        GridPane.setConstraints(button3, 2, 0);
+
         grid.getChildren().addAll(tervitus, Piimatooted, Piim, box1, box2, box3, box4, box5, box6,
                 Teraviljatooted, Tera, box7, box8, box9, box10, box11, box12, box13, box14,
                 Rasvad, Rasv, box15, box16, box17, box18,
                 Proteiinid, Prot, box19, box20, box21, box22, box23, box24, box25, box26,
                 Puuviljad, Puuv, box27, box28, box29, box30, box31, box32, box33, box34, box35, box36,
-                resultLabel, resultLabel1, resultLabel2, button, button1, button2);
+                resultLabel, resultLabel1, resultLabel2, button, button1, button2, button3);
 
         primaryStage.setScene(scene);
         primaryStage.show();
