@@ -1,21 +1,25 @@
 package Toidupaevik;
 
-import javafx.scene.control.CheckBox;
+        import javafx.scene.control.CheckBox;
 
-public class punnid extends CheckBox {
-
+public class Punnid extends CheckBox {
     private int value;
-
-    public punnid(String text) {
-        super(text);
-        this.value = value;
-    }
 
     public int getValue() {
         return value;
     }
-
     public void setValue(int value) {
         this.value = value;
     }
+
+    public Punnid(String text, int value) {
+        super(text);
+        this.value = value;
+    }
+
+
+    public Punnid (String text) {
+        super(text);
+    }
+
 }

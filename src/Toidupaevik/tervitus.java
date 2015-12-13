@@ -1,7 +1,8 @@
 
 package Toidupaevik;
 
-import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -12,27 +13,54 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class tervitus extends Application {
+public class Tervitus {
 
-    Stage window;
     Button button;
+    Button button1;
+    Button button2;
+
     Label resultLabel;
     Label resultLabel1;
-    ListView<String> listView;
-    private List<punnid> intValueCheckboxList = new ArrayList<>();
+    Label resultLabel2;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        window = primaryStage;
+    ListView<String> listView;
+    private List<Punnid> intValueCheckboxList = new ArrayList<>();
+    Stage primaryStage = new Stage();
+
+    Tervitus(){
+        setupScene();
+        setupNupp ();
+    }
+    private void setupNupp() {
+        button.setOnAction((event) -> {
+            calculate();
+        });
+        button1.setOnAction((event1) -> {
+            primaryStage.close();
+        });
+        button2.setOnAction((event2) -> {
+                    for (Punnid box : intValueCheckboxList) {
+                        box.setSelected(false);
+                        resultLabel1.setText(null);
+                        resultLabel2.setText(null);
+                        resultLabel.setText(null);
+                    }
+                }
+        );
+    }
+        private void setupScene() {
+
         resultLabel = new Label();
         resultLabel1 = new Label();
+        resultLabel2 = new Label();
 
         GridPane grid = new GridPane();
+        Scene scene = new Scene(grid, 1200, 800);
         grid.setPadding(new Insets(10, 10, 10, 10)); //tekitab 10pixelise ääre ümber
         grid.setVgap(10);//tekitab vertikaalselt vahed
         grid.setHgap(10); //horisontaalselt vahed
 
-        Label tervitus =new Label("Tere kaalujälgija!");
+        Label tervitus = new Label("Tere kaalujälgija!");
         GridPane.setConstraints(tervitus, 0, 0);//seab sildi esimesse tulpa ja esimesse lahtrisse
 
         Label Piimatooted = new Label("Piimatooted");
@@ -40,53 +68,52 @@ public class tervitus extends Application {
         Label Piim = new Label("2 portsu");
         GridPane.setConstraints(Piim, 0, 3);
 
-        punnid box1 = new punnid("Rasvata piim, 300 ml");
+        Punnid box1 = new Punnid("Rasvata piim, 300 ml", 90);
         intValueCheckboxList.add(box1);
         GridPane.setConstraints(box1, 0, 4);
-        punnid box2 = new punnid("1% piim, 200 ml");
+        Punnid box2 = new Punnid("1% piim, 200 ml", 90);
         intValueCheckboxList.add(box2);
         GridPane.setConstraints(box2, 0, 5);
-        punnid box3 = new punnid("2,5% piim, 200 ml");
+        Punnid box3 = new Punnid("2,5% piim, 200 ml", 90);
         intValueCheckboxList.add(box3);
         GridPane.setConstraints(box3, 0, 6);
-        punnid box4 = new punnid("1% keefiir, 200 ml");
+        Punnid box4 = new Punnid("1% keefiir, 200 ml", 90);
         intValueCheckboxList.add(box4);
         GridPane.setConstraints(box4, 0, 7);
-        punnid box5 = new punnid("2,5% keefir, 100 ml");
+        Punnid box5 = new Punnid("2,5% keefir, 100 ml", 90);
         intValueCheckboxList.add(box5);
         GridPane.setConstraints(box5, 0, 8);
-        punnid box6 = new punnid("jogurt (<100 cal), 100 ml");
+        Punnid box6 = new Punnid("jogurt (<100 cal), 100 ml", 90);
         intValueCheckboxList.add(box6);
         GridPane.setConstraints(box6, 0, 9);
-
 
         Label Teraviljatooted = new Label("Teraviljatooted");
         GridPane.setConstraints(Teraviljatooted, 1, 2);
         Label Tera = new Label("4 portsu");
         GridPane.setConstraints(Tera, 1, 3);
 
-        punnid box7 = new punnid("leib, keskmine viil, 30 g");
+        Punnid box7 = new Punnid("leib, keskmine viil, 30 g", 80);
         intValueCheckboxList.add(box1);
         GridPane.setConstraints(box7, 1, 4);
-        punnid box8 = new punnid("makaronid keedetud, 100 ml");
+        Punnid box8 = new Punnid("makaronid keedetud, 100 ml", 80);
         intValueCheckboxList.add(box8);
         GridPane.setConstraints(box8, 1, 5);
-        punnid box9 = new punnid("puder (riis, tatar, manna jt) 100 ml");
+        Punnid box9 = new Punnid("puder (riis, tatar, manna jt) 100 ml", 80);
         intValueCheckboxList.add(box9);
         GridPane.setConstraints(box9, 1, 6);
-        punnid box10 = new punnid("helbed (kaera, riisi jne) 75 ml");
+        Punnid box10 = new Punnid("helbed (kaera, riisi jne) 75 ml", 80);
         intValueCheckboxList.add(box10);
         GridPane.setConstraints(box10, 1, 7);
-        punnid box11 = new punnid("müsli, 3 spl");
+        Punnid box11 = new Punnid("müsli, 3 spl", 80);
         intValueCheckboxList.add(box11);
         GridPane.setConstraints(box11, 1, 8);
-        punnid box12 = new punnid("herned (toored, konserv) 120 g");
+        Punnid box12 = new Punnid("herned (toored, konserv) 120 g", 80);
         intValueCheckboxList.add(box12);
         GridPane.setConstraints(box12, 1, 9);
-        punnid box13 = new punnid("mais (toores, konserv) 80 g");
+        Punnid box13 = new Punnid("mais (toores, konserv) 80 g", 80);
         intValueCheckboxList.add(box13);
         GridPane.setConstraints(box13, 1, 10);
-        punnid box14 = new punnid("kartul 2 pisikest v 1 keskmine");
+        Punnid box14 = new Punnid("kartul 2 pisikest v 1 keskmine", 80);
         intValueCheckboxList.add(box14);
         GridPane.setConstraints(box14, 1, 11);
 
@@ -95,16 +122,16 @@ public class tervitus extends Application {
         Label Rasv = new Label("2 portsu");
         GridPane.setConstraints(Rasv, 2, 3);
 
-        punnid box15 = new punnid("majonees, 1 tl");
+        Punnid box15 = new Punnid("majonees, 1 tl", 40);
         intValueCheckboxList.add(box15);
         GridPane.setConstraints(box15, 2, 4);
-        punnid box16 = new punnid("taimeõli, 1 tl");
+        Punnid box16 = new Punnid("taimeõli, 1 tl", 40);
         intValueCheckboxList.add(box16);
         GridPane.setConstraints(box16, 2, 5);
-        punnid box17 = new punnid("pähklid 7g, ca 5tk");
+        Punnid box17 = new Punnid("pähklid 7g, ca 5tk", 40);
         intValueCheckboxList.add(box17);
         GridPane.setConstraints(box17, 2, 6);
-        punnid box18 = new punnid("juust, 30 g");
+        Punnid box18 = new Punnid("juust, 30 g", 40);
         intValueCheckboxList.add(box18);
         GridPane.setConstraints(box18, 2, 7);
 
@@ -113,28 +140,28 @@ public class tervitus extends Application {
         Label Prot = new Label("3 portsu");
         GridPane.setConstraints(Prot, 3, 3);
 
-        punnid box19 = new punnid("liha (kana, veis, väherasvane siga jt) 30 g");
+        Punnid box19 = new Punnid("liha (kana, veis, väherasvane siga jt) 30 g", 60);
         intValueCheckboxList.add(box19);
         GridPane.setConstraints(box19, 3, 4);
-        punnid box20 = new punnid("kala (heik, lest jt väherasvased) 60 g");
+        Punnid box20 = new Punnid("kala (heik, lest jt väherasvased) 60 g", 60);
         intValueCheckboxList.add(box20);
         GridPane.setConstraints(box20, 3, 5);
-        punnid box21 = new punnid("kala (angerjas, lõhe, räim, suitsukala) 30 g");
+        Punnid box21 = new Punnid("kala (angerjas, lõhe, räim, suitsukala) 30 g", 60);
         intValueCheckboxList.add(box21);
         GridPane.setConstraints(box21, 3, 6);
-        punnid box22 = new punnid("kodujuust 80 g");
+        Punnid box22 = new Punnid("kodujuust 80 g", 60);
         intValueCheckboxList.add(box22);
         GridPane.setConstraints(box22, 3, 7);
-        punnid box23 = new punnid("kohupiim < 10 % rasva, 80 g");
+        Punnid box23 = new Punnid("kohupiim < 10 % rasva, 80 g", 60);
         intValueCheckboxList.add(box23);
         GridPane.setConstraints(box23, 3, 8);
-        punnid box24 = new punnid("vähk, krabi, krabipulk, 30 g");
+        Punnid box24 = new Punnid("vähk, krabi, krabipulk, 30 g", 60);
         intValueCheckboxList.add(box24);
         GridPane.setConstraints(box24, 3, 9);
-        punnid box25 = new punnid("vorst, poolfabrikaadid, 30 g");
+        Punnid box25 = new Punnid("vorst, poolfabrikaadid, 30 g", 60);
         intValueCheckboxList.add(box25);
         GridPane.setConstraints(box25, 3, 10);
-        punnid box26 = new punnid("muna, 1 tk");
+        Punnid box26 = new Punnid("muna, 1 tk", 60);
         intValueCheckboxList.add(box26);
         GridPane.setConstraints(box26, 3, 11);
 
@@ -143,66 +170,81 @@ public class tervitus extends Application {
         Label Puuv = new Label("3 portsu");
         GridPane.setConstraints(Puuv, 4, 3);
 
-        punnid box27 = new punnid("apelsin, 1 keskmine");
+        Punnid box27 = new Punnid("apelsin, 1 keskmine", 60);
         intValueCheckboxList.add(box27);
         GridPane.setConstraints(box27, 4, 4);
-        punnid box28 = new punnid("banaan, 1/2");
+        Punnid box28 = new Punnid("banaan, 1/2", 60);
         intValueCheckboxList.add(box28);
         GridPane.setConstraints(box28, 4, 5);
-        punnid box29 = new punnid("greip, 1/2");
+        Punnid box29 = new Punnid("greip, 1/2", 60);
         intValueCheckboxList.add(box29);
         GridPane.setConstraints(box29, 4, 6);
-        punnid box30 = new punnid("kiivi, 1 tk");
+        Punnid box30 = new Punnid("kiivi, 1 tk", 60);
         intValueCheckboxList.add(box30);
         GridPane.setConstraints(box30, 4, 7);
-        punnid box31 = new punnid("õun, 1 keskmine");
+        Punnid box31 = new Punnid("õun, 1 keskmine", 60);
         intValueCheckboxList.add(box31);
         GridPane.setConstraints(box31, 4, 8);
-        punnid box32 = new punnid("viinamarjad 100 g");
+        Punnid box32 = new Punnid("viinamarjad 100 g", 60);
         intValueCheckboxList.add(box32);
         GridPane.setConstraints(box32, 4, 9);
-        punnid box33 = new punnid("nektariin, 1 keskmine");
+        Punnid box33 = new Punnid("nektariin, 1 keskmine", 60);
         intValueCheckboxList.add(box33);
         GridPane.setConstraints(box33, 4, 10);
-        punnid box34 = new punnid("pirn, 1 keskmine");
+        Punnid box34 = new Punnid("pirn, 1 keskmine", 60);
         intValueCheckboxList.add(box34);
         GridPane.setConstraints(box34, 4, 11);
-        punnid box35 = new punnid("ploom, 3 keskmist");
+        Punnid box35 = new Punnid("ploom, 3 keskmist", 60);
         intValueCheckboxList.add(box35);
         GridPane.setConstraints(box35, 4, 12);
-        punnid box36 = new punnid("marjad 120 g");
+        Punnid box36 = new Punnid("marjad 120 g", 60);
         intValueCheckboxList.add(box36);
         GridPane.setConstraints(box36, 4, 13);
-
 
         button = new Button("Arvuta");
         GridPane.setConstraints(button, 1, 14);
 
-        grid.getChildren().addAll(tervitus, Piimatooted,Piim, box1, box2, box3,box4,box5,box6, Teraviljatooted,Tera, box7, box8, box9, box10, box11, box12, box13, box14, Rasvad, Rasv, box15, box16, box17, box18, Proteiinid, Prot, box19, box20, box21, box22, box23, box24, box25, box26, Puuviljad,Puuv, box27, box28, box29, box30, box31, box32, box33, box34, box35, box36, resultLabel, resultLabel1, button);
-        Scene scene = new Scene(grid, 1200, 500);
-        window.setScene(scene);
-        window.show();
+        button1 = new Button("Sulge");
+        GridPane.setConstraints(button1, 1, 15);
 
-        button.setOnAction((event) -> {
-            calculate();
-        });
+        button2 = new Button("Tühista valik");
+        GridPane.setConstraints(button2, 1, 16);
 
+        grid.getChildren().addAll(tervitus, Piimatooted, Piim, box1, box2, box3, box4, box5, box6,
+                Teraviljatooted, Tera, box7, box8, box9, box10, box11, box12, box13, box14,
+                Rasvad, Rasv, box15, box16, box17, box18,
+                Proteiinid, Prot, box19, box20, box21, box22, box23, box24, box25, box26,
+                Puuviljad, Puuv, box27, box28, box29, box30, box31, box32, box33, box34, box35, box36,
+                resultLabel, resultLabel1, resultLabel2, button, button1, button2);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
-
     private void calculate() {
         int total = 0;
-        int kogus = 2000;
+        int kogus = 700;
         int jaak = 0;
+        int jaakule = 0;
 
-        for (punnid box : intValueCheckboxList){
-            if (box.isSelected())total = total + box.getValue();
-            jaak = kogus - total;
+        for (Punnid box : intValueCheckboxList) {
+            if (box.isSelected()) {
+                total = total + box.getValue();
+                jaak = kogus - total;
+                jaakule = total - kogus;
+
+                if (total < kogus) {
+                    resultLabel.setText("Sa oled tarbinud " + total + "kcal");
+                    GridPane.setConstraints(resultLabel, 1, 18);
+                    resultLabel1.setText("Sa võid veel süüa " + jaak + "kcal");
+                    GridPane.setConstraints(resultLabel1, 1, 19);
+                } else {
+                    resultLabel.setText("Sa oled tarbinud - " + total + "kcal");
+                    GridPane.setConstraints(resultLabel, 1, 18);
+                    resultLabel2.setText("Sa ületsid oma päevanormi - " + jaakule + "kcal");
+                    GridPane.setConstraints(resultLabel2, 1, 20);
+                    resultLabel1.setText(null);
+                }
+            }
         }
-
-
-        resultLabel.setText("Sa oled tarbinud " + total + "kcal");
-        GridPane.setConstraints(resultLabel, 1, 15);
-        resultLabel1.setText("Sa võid veel süüa " + jaak + "kcal");
-        GridPane.setConstraints(resultLabel1, 1, 16);
     }
 }
