@@ -1,4 +1,4 @@
-package Toidupaevik;
+ppackage Toidupaevik;
 
         import javafx.scene.control.CheckBox;
 
