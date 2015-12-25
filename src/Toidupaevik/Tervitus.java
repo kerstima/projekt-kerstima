@@ -10,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -24,7 +23,7 @@ public class Tervitus {
 
     Button button;//arvutamise nupp
     Button button1; //akna sulgemise nupp
-    Button button2; //t√ºhista valiku nupp
+    Button button2; //t¸hista valiku nupp
     Button button3; //selgitava akna nupp
     static boolean answer;
 
@@ -47,19 +46,19 @@ public class Tervitus {
 
         resultLabel = new Label(); //oled tabinud
         resultLabel1 = new Label(); //
-        resultLabel2 = new Label(); //v√µid veel s√º√ºa
+        resultLabel2 = new Label(); //vıid veel s¸¸a
 
 
 
         GridPane grid = new GridPane();
         Scene scene = new Scene(grid, 1200, 800);
-        grid.setPadding(new Insets(10, 10, 10, 10)); //tekitab 10pixelise √§√§re √ºmber
+        grid.setPadding(new Insets(10, 10, 10, 10)); //tekitab 10pixelise ‰‰re ¸mber
         grid.setVgap(10);//tekitab vertikaalselt vahed
         grid.setHgap(10); //horisontaalselt vahed
-        grid.setStyle("-fx-background-color: palegreen");//no saad taustav√§rvi
+        grid.setStyle("-fx-background-color: palegreen");//no saad taustav‰rvi
 
 
-        Label tervitus = new Label("Tere kaaluj√§lgija!");
+        Label tervitus = new Label("Tere kaaluj‰lgija!");
         tervitus.setFont(new Font("Forte", 24));//seab fondi
         GridPane.setConstraints(tervitus, 0, 0);//seab sildi esimesse tulpa ja esimesse lahtrisse
 
@@ -106,7 +105,7 @@ public class Tervitus {
         Punnid box10 = new Punnid("helbed (kaera, riisi jne) 75 ml", 80);
         intValueCheckboxList.add(box10);
         GridPane.setConstraints(box10, 1, 7);
-        Punnid box11 = new Punnid("m√ºsli, 3 spl", 80);
+        Punnid box11 = new Punnid("m¸sli, 3 spl", 80);
         intValueCheckboxList.add(box11);
         GridPane.setConstraints(box11, 1, 8);
         Punnid box12 = new Punnid("herned (toored, konserv) 120 g", 80);
@@ -128,10 +127,10 @@ public class Tervitus {
         Punnid box15 = new Punnid("majonees, 1 tl", 40);
         intValueCheckboxList.add(box15);
         GridPane.setConstraints(box15, 2, 4);
-        Punnid box16 = new Punnid("taime√µli, 1 tl", 40);
+        Punnid box16 = new Punnid("taimeıli, 1 tl", 40);
         intValueCheckboxList.add(box16);
         GridPane.setConstraints(box16, 2, 5);
-        Punnid box17 = new Punnid("p√§hklid 7g, ca 5tk", 40);
+        Punnid box17 = new Punnid("p‰hklid 7g, ca 5tk", 40);
         intValueCheckboxList.add(box17);
         GridPane.setConstraints(box17, 2, 6);
         Punnid box18 = new Punnid("juust, 30 g", 40);
@@ -144,13 +143,13 @@ public class Tervitus {
         Label Prot = new Label("3 portsu");
         GridPane.setConstraints(Prot, 3, 3);
 
-        Punnid box19 = new Punnid("liha (kana, veis, v√§herasvane siga jt) 30 g", 60);
+        Punnid box19 = new Punnid("liha (kana, veis, v‰herasvane siga jt) 30 g", 60);
         intValueCheckboxList.add(box19);
         GridPane.setConstraints(box19, 3, 4);
-        Punnid box20 = new Punnid("kala (heik, lest jt v√§herasvased) 60 g", 60);
+        Punnid box20 = new Punnid("kala (heik, lest jt v‰herasvased) 60 g", 60);
         intValueCheckboxList.add(box20);
         GridPane.setConstraints(box20, 3, 5);
-        Punnid box21 = new Punnid("kala (angerjas, l√µhe, r√§im, suitsukala) 30 g", 60);
+        Punnid box21 = new Punnid("kala (angerjas, lıhe, r‰im, suitsukala) 30 g", 60);
         intValueCheckboxList.add(box21);
         GridPane.setConstraints(box21, 3, 6);
         Punnid box22 = new Punnid("kodujuust 80 g", 60);
@@ -159,7 +158,7 @@ public class Tervitus {
         Punnid box23 = new Punnid("kohupiim < 10 % rasva, 80 g", 60);
         intValueCheckboxList.add(box23);
         GridPane.setConstraints(box23, 3, 8);
-        Punnid box24 = new Punnid("v√§hk, krabi, krabipulk, 30 g", 60);
+        Punnid box24 = new Punnid("v‰hk, krabi, krabipulk, 30 g", 60);
         intValueCheckboxList.add(box24);
         GridPane.setConstraints(box24, 3, 9);
         Punnid box25 = new Punnid("vorst, poolfabrikaadid, 30 g", 60);
@@ -187,7 +186,7 @@ public class Tervitus {
         Punnid box30 = new Punnid("kiivi, 1 tk", 60);
         intValueCheckboxList.add(box30);
         GridPane.setConstraints(box30, 4, 7);
-        Punnid box31 = new Punnid("√µun, 1 keskmine", 60);
+        Punnid box31 = new Punnid("ıun, 1 keskmine", 60);
         intValueCheckboxList.add(box31);
         GridPane.setConstraints(box31, 4, 8);
         Punnid box32 = new Punnid("viinamarjad 100 g", 60);
@@ -240,10 +239,10 @@ public class Tervitus {
         button1 = new Button("Sulge");
         GridPane.setConstraints(button1, 1, 15);
 
-        button2 = new Button("T√ºhista valik");
+        button2 = new Button("T¸hista valik");
         GridPane.setConstraints(button2, 1, 16);
 
-        button3 = new Button("Kasutamis√µpetus");
+        button3 = new Button("Kasutamisıpetus");
         GridPane.setConstraints(button3, 4, 0);
 
         grid.getChildren().addAll(tervitus, Piimatooted, Piim, box1, box2, box3, box4, box5, box6,
@@ -257,13 +256,13 @@ public class Tervitus {
         primaryStage.show();
     }
 
-    //j√§rgnev osa on selgitava akna t√∂√∂s hoidmiseks (kasutatud koodi https://www.youtube.com/watch?v=SpL3EToqaXA
+    //j‰rgnev osa on selgitava akna tˆˆs hoidmiseks (kasutatud koodi https://www.youtube.com/watch?v=SpL3EToqaXA
     private boolean display(String title, String message) {
         Stage window = new Stage();
 
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle(title);
-        window.setMinHeight(500);//seab minimaalse ja maksimaalse akna suuruse, kui maks ei pane, l√§heb tekst √ºle ekraani laiali
+        window.setMinHeight(500);//seab minimaalse ja maksimaalse akna suuruse, kui maks ei pane, l‰heb tekst ¸le ekraani laiali
         window.setMinWidth(700);
         window.setMaxHeight(600);
         window.setMaxWidth(800);
@@ -273,7 +272,7 @@ public class Tervitus {
         Label label = new Label();
         label.setText(message);
         label.setWrapText(true);
-        label.setTextAlignment(TextAlignment.JUSTIFY);//teksti √§√§red v√µrdseks
+        label.setTextAlignment(TextAlignment.JUSTIFY);//teksti ‰‰red vırdseks
         label.setFont(new Font("Calibri", 16));
         Button closeButton = new Button("sulge");
         closeButton.setOnAction((event) -> {
@@ -287,7 +286,7 @@ public class Tervitus {
         window.setScene(scene);
         window.showAndWait();
         return answer;
-    }// selgitava akna tegevus l√µppes, l√§heb edasi p√µhiosa
+    }// selgitava akna tegevus lıppes, l‰heb edasi pıhiosa
 
     private void setupNupp() {
         button.setOnAction((event) -> {
@@ -312,23 +311,23 @@ public class Tervitus {
 
         //selgitava akna tekst
         button3.setOnAction((event) -> {
-            boolean result = display("Kuidas kasutada", "\n" +//kaldkriips+n l√µikab teksti ja viib j√§rgmisele reale
-                    "Toiduainete gruppide kohal on toodud p√§evakogused portsjonites, mis tuleb √§ra s√º√ºa.\n" +
+            boolean result = display("Kuidas kasutada", "\n" +//kaldkriips+n lıikab teksti ja viib j‰rgmisele reale
+                    "Toiduainete gruppide kohal on toodud p‰evakogused portsjonites, mis tuleb ‰ra s¸¸a.\n" +
                     "\n" +
-                    "Kui neid √§ra ei s√∂√∂, siis teed tervisle liiga.\n" +
-                    "Kui oled kontorirott ja s√∂√∂d neist portsudest rohkem, siis kaalust alla ei v√µta\n" +
+                    "Kui neid ‰ra ei sˆˆ, siis teed tervisle liiga.\n" +
+                    "Kui oled kontorirott ja sˆˆd neist portsudest rohkem, siis kaalust alla ei vıta\n" +
                     "\n" +
-                    "Muidu v√µib v√§heliikuv naisterahvas p√§evas s√º√ºa 1700 kcalorit ja meesterahvas 1800 kcal\n"+
-                    "Ekraanil olev tekst - v√µid veel s√º√ºa- n√§itab, et sa ei v√ºta juurde\n"+
+                    "Muidu vıib v‰heliikuv naisterahvas p‰evas s¸¸a 1700 kcalorit ja meesterahvas 1800 kcal\n"+
+                    "Ekraanil olev tekst - vıid veel s¸¸a- n‰itab, et sa ei vıta juurde\n"+
                     "\n" +
-                    "Kui ekraanile tekib tekst, et oled s√∂√∂nud rohkem, kui..., no siis paisud.\n " +
+                    "Kui ekraanile tekib tekst, et oled sˆˆnud rohkem, kui..., no siis paisud.\n " +
                     "\n" +
-                    "NB! lisaks toodud portsudele pead iga p√§ev s√∂√∂ma veel 600 g v√µi rohkem juurvilju\n" +
-                    "(√§ra muretse need kaloreid ei anna)\n" +
+                    "NB! lisaks toodud portsudele pead iga p‰ev sˆˆma veel 600 g vıi rohkem juurvilju\n" +
+                    "(‰ra muretse need kaloreid ei anna)\n" +
                     "\n" +
                     "Sa pead jooma 1,5 liitrit vett! \n"+
                     "\n" +
-                    "NB! Otsustada kumb sa oled, naine v√µi mees, muidu n√§ed tulemust valesti");
+                    "NB! Otsusta kumb sa oled, naine vıi mees, muidu n‰ed tulemust valesti");
 
             System.out.println(result);
         });
@@ -339,7 +338,7 @@ public class Tervitus {
         int kogus = 0;
         for (Sugu sugu : intValueCheckboxList1){
             if (sugu.isSelected()){
-                kogus = kogus + sugu.getValue();//v√µtab √ºlalt maks lubatud koguse
+                kogus = kogus + sugu.getValue();//vıtab ¸lalt maks lubatud koguse
             }
         }
         int jaak = 0;
@@ -348,19 +347,19 @@ public class Tervitus {
 
         for (Punnid box : intValueCheckboxList) {
             if (box.isSelected()) {
-                total = total + box.getValue();//liidab valitud toiduainete kastide v√§√§rtused
-                jaak = kogus - total;//lahutab valitud v√§√§rtused maksimaalsest lubatud kogusest (n√§itab palju saab veel paisumata s√º√ºa)
-                jaakule = total - kogus; //n√§itab kui palju √ºle s√∂√∂d, ilmub vaid siis kui √ºletad lubatud kogust
+                total = total + box.getValue();//liidab valitud toiduainete kastide v‰‰rtused
+                jaak = kogus - total;//lahutab valitud v‰‰rtused maksimaalsest lubatud kogusest (n‰itab palju saab veel paisumata s¸¸a)
+                jaakule = total - kogus; //n‰itab kui palju ¸le sˆˆd, ilmub vaid siis kui ¸letad lubatud kogust
 
                 if (total < kogus) {
                     resultLabel.setText("Sa oled tarbinud " + total + "kcal");
                     GridPane.setConstraints(resultLabel, 1, 18);
-                    resultLabel1.setText("Sa v√µid veel s√º√ºa " + jaak + "kcal");
+                    resultLabel1.setText("Sa vıid veel s¸¸a " + jaak + "kcal");
                     GridPane.setConstraints(resultLabel1, 1, 19);
                 } else {
                     resultLabel.setText("Sa oled tarbinud - " + total + "kcal");
                     GridPane.setConstraints(resultLabel, 1, 18);
-                    resultLabel2.setText("Sa √ºletsid oma p√§evanormi - " + jaakule + "kcal");
+                    resultLabel2.setText("Sa ¸letsid oma p‰evanormi - " + jaakule + "kcal");
                     GridPane.setConstraints(resultLabel2, 1, 20);
                     resultLabel1.setText(null);
                 }
