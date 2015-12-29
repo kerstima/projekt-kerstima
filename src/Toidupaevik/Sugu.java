@@ -1,7 +1,7 @@
 package Toidupaevik;
 
-import javafx.scene.control.CheckBox;
-
+        import javafx.scene.control.CheckBox;
+//lisab naine-mees valikule väärtuse (numbrilise), et saaks siduda lubatud ülempiiriga
 public class Sugu extends CheckBox {
     private int value;
 

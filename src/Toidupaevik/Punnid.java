@@ -1,7 +1,7 @@
-ppackage Toidupaevik;
+package Toidupaevik;
 
         import javafx.scene.control.CheckBox;
-
+//klass vıimaldab lisada toiduainele numbrilist v‰‰rtust (getter-setter), et saaks kasutada arvutamise meetodit
 public class Punnid extends CheckBox {
     private int value;
 

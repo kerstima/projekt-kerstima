@@ -19,39 +19,40 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Tervitus {
 
     Button button;//arvutamise nupp
     Button button1; //akna sulgemise nupp
     Button button2; //tühista valiku nupp
     Button button3; //selgitava akna nupp
-    static boolean answer;
+    static boolean answer; //tõevärtus true v false
 
-    Label resultLabel;
-    Label resultLabel1;
-    Label resultLabel2;
+    Label resultLabel; //oled tabinud
+    Label resultLabel1; //võid veel süüa
+    Label resultLabel2; //ületasid lubatud koguse
 
 
     ListView<String> listView;
-    private List<Punnid> intValueCheckboxList = new ArrayList<>();
-    private List<Sugu> intValueCheckboxList1 = new ArrayList<>();
+    private List<Punnid> intValueCheckboxList = new ArrayList<>();//toiduainete massiiv
+    private List<Sugu> intValueCheckboxList1 = new ArrayList<>();//mees-naine valiku massiiv
     Stage primaryStage = new Stage();
 
     Tervitus() {
-        setupScene();
-        setupNupp();
+        setupScene();//meetod, mis paneb paika stseeni
+        setupNupp();//paneb paika arvuta/sulge/tühista nupud
     }
 
     private void setupScene() {
 
-        resultLabel = new Label(); //oled tabinud
-        resultLabel1 = new Label(); //
-        resultLabel2 = new Label(); //võid veel süüa
+        resultLabel = new Label();
+        resultLabel1 = new Label();
+        resultLabel2 = new Label();
 
 
 
-        GridPane grid = new GridPane();
-        Scene scene = new Scene(grid, 1200, 800);
+        GridPane grid = new GridPane();//võimaldab stseeni jagada osadeks, et iga asi oleks õiges kohas
+        Scene scene = new Scene(grid, 1200, 800);// stseeni mõõdud
         grid.setPadding(new Insets(10, 10, 10, 10)); //tekitab 10pixelise ääre ümber
         grid.setVgap(10);//tekitab vertikaalselt vahed
         grid.setHgap(10); //horisontaalselt vahed
@@ -205,9 +206,7 @@ public class Tervitus {
         intValueCheckboxList.add(box36);
         GridPane.setConstraints(box36, 4, 13);
 
-
-
-        Image image = new Image(getClass().getResourceAsStream("naine.png"));
+        Image image = new Image(getClass().getResourceAsStream("naine.png"));//lisab pildid
         Image image1 = new Image(getClass().getResourceAsStream("mees.png"));
 
         Sugu box37 = new Sugu("Naine", 1700);//seob soo kasti max lubatud kcal arvuga
@@ -218,20 +217,18 @@ public class Tervitus {
         GridPane.setConstraints(box38, 1, 1);
 
         box37.setOnAction((event3) -> {
-            box37.setGraphic(new ImageView(image));
-            //box37.setText(null);
-            box38.setSelected(false);
+            box37.setGraphic(new ImageView(image));//lisab mehe pildi, kui valime naise
+            box38.setSelected(false);//kustutab linnukese ära, kui varem oli valikus mees
             box38.setGraphic(null);
-            box38.setText("Mees");
+            box38.setText("Mees");//tagastab mehe sildi
         });
 
         box38.setOnAction((event4) -> {
-            box38.setGraphic(new ImageView(image1));
+            box38.setGraphic(new ImageView(image1));//sama mis eelmisel aga vastupidi
             box37.setSelected(false);
             box37.setText("Naine");
             box37.setGraphic(null);
-            //box38.setText(null);
-        });
+            });
 
         button = new Button("Arvuta");
         GridPane.setConstraints(button, 1, 14);
@@ -244,7 +241,7 @@ public class Tervitus {
 
         button3 = new Button("Kasutamisõpetus");
         GridPane.setConstraints(button3, 4, 0);
-
+//korjab kokku kõik nupud ja muud valikud/sildid
         grid.getChildren().addAll(tervitus, Piimatooted, Piim, box1, box2, box3, box4, box5, box6,
                 Teraviljatooted, Tera, box7, box8, box9, box10, box11, box12, box13, box14,
                 Rasvad, Rasv, box15, box16, box17, box18,
@@ -256,7 +253,7 @@ public class Tervitus {
         primaryStage.show();
     }
 
-    //järgnev osa on selgitava akna töös hoidmiseks (kasutatud koodi https://www.youtube.com/watch?v=SpL3EToqaXA
+    //järgnev osa on selgitava akna töös hoidmiseks (kasutatud koodi https://www.youtube.com/watch?v=SpL3EToqaXA)
     private boolean display(String title, String message) {
         Stage window = new Stage();
 
@@ -267,13 +264,12 @@ public class Tervitus {
         window.setMaxHeight(600);
         window.setMaxWidth(800);
 
-
-
         Label label = new Label();
         label.setText(message);
         label.setWrapText(true);
         label.setTextAlignment(TextAlignment.JUSTIFY);//teksti ääred võrdseks
-        label.setFont(new Font("Calibri", 16));
+        label.setFont(new Font("Calibri", 16));//font ja tähe suurus
+
         Button closeButton = new Button("sulge");
         closeButton.setOnAction((event) -> {
             window.close();
@@ -281,7 +277,7 @@ public class Tervitus {
 
         VBox layout = new VBox(10.0D);
         layout.getChildren().addAll(new Node[]{label, closeButton});
-        layout.setAlignment(Pos.CENTER);
+        layout.setAlignment(Pos.CENTER);//paigutab aknas sulgemise nupu keskele
         Scene scene = new Scene(layout);
         window.setScene(scene);
         window.showAndWait();
@@ -290,7 +286,7 @@ public class Tervitus {
 
     private void setupNupp() {
         button.setOnAction((event) -> {
-            calculate();
+            calculate();//kutsub välja arvutamise meetodi
         });
         button1.setOnAction((event1) -> {
             primaryStage.close();
@@ -317,15 +313,15 @@ public class Tervitus {
                     "Kui neid ära ei söö, siis teed tervisle liiga.\n" +
                     "Kui oled kontorirott ja sööd neist portsudest rohkem, siis kaalust alla ei võta\n" +
                     "\n" +
-                    "Muidu võib väheliikuv naisterahvas päevas süüa 1700 kcalorit ja meesterahvas 1800 kcal\n"+
-                    "Ekraanil olev tekst - võid veel süüa- näitab, et sa ei võta juurde\n"+
+                    "Muidu võib väheliikuv naisterahvas päevas süüa 1700 kcalorit ja meesterahvas 1800 kcal\n" +
+                    "Ekraanil olev tekst - võid veel süüa- näitab, et sa ei võta juurde\n" +
                     "\n" +
                     "Kui ekraanile tekib tekst, et oled söönud rohkem, kui..., no siis paisud.\n " +
                     "\n" +
                     "NB! lisaks toodud portsudele pead iga päev sööma veel 600 g või rohkem juurvilju\n" +
                     "(ära muretse need kaloreid ei anna)\n" +
                     "\n" +
-                    "Sa pead jooma 1,5 liitrit vett! \n"+
+                    "Sa pead jooma 1,5 liitrit vett! \n" +
                     "\n" +
                     "NB! Otsusta kumb sa oled, naine või mees, muidu näed tulemust valesti");
 
@@ -338,7 +334,7 @@ public class Tervitus {
         int kogus = 0;
         for (Sugu sugu : intValueCheckboxList1){
             if (sugu.isSelected()){
-                kogus = kogus + sugu.getValue();//võtab ülalt maks lubatud koguse
+                kogus = kogus + sugu.getValue();//võtab ülalt, sõltuvalt sellest, kas oled mees või naine maks lubatud koguse
             }
         }
         int jaak = 0;

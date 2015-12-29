@@ -2,7 +2,7 @@ package Toidupaevik;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-
+//käivitab kogu programmi
 public class Main extends Application {
 
 
