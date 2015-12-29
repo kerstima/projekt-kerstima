@@ -26,6 +26,6 @@ Kui sa valikut "Mees" või "Naine" ei vali, siis saad küll teada, tarbitud kcal
 
 Juhuks kui valisid valesti, on sul võimalik tühistada valik nupust "Tühista".
 Kui ei tea, mida teha, siis nupust "Kasutusjuhend" saad lugeda selgitusi.
-Aken sulgub nupust "Sulge"
+Aken sulgub nupust "Sulge".
 
-##Muud märkmed
+
