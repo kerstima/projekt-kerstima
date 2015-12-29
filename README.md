@@ -1,3 +1,5 @@
+##Toidupäevik2
+
 See projekt on abiks kaalujälgimisel (ehk aitab:)
 Aluseks on võetud kaalujälgijate vana punktide lugemise süsteem, mille mõte on, et sa sööksid kõike ja ei näljutaks ennast mõttetult.
 Toiduained on jagatud portsjoniteks (näed neid toidugruppide all), kohustuslikud portsjonid pead ära sööma
