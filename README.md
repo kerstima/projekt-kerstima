@@ -6,11 +6,20 @@ Aluseks on võetud kaalujälgijate vana punktide lugemise süsteem, mille mõte 
 
 
 ##Kasutusjuhend
-Toiduained on jagatud portsjoniteks (näed neid toidugruppide all), kohustuslikud portsjonid pead ära sööma
-Kui sööd vaähem, siis tekib kiri palju veel süüa saad.
-Kui sööd rohkem, kui lubatud, siis näitab lugeja sulle ületatud kalorite mahtu
-Ära unusta märkida, kas oled naine või mees, muidu arvutab sinu vajadust valesti.
-Valesti valimisel saad valikud tühistada
-ja kui selgitustest ei piisa, siis on lisatud ka nupuke kasutusjuhendiga
+Akna avanemisel tuleb ette toiduainete nimekiri ja valikuvõimalused.
+1. Kõigepealt valid kes sa kasutajana oled - st naine või mees (valiku tegemine on oluline, kuna päevane toiduainete vajadus on erinev).
+2. Valid päeva jooksul söödud toiduained (klikid kastikestele).
+3. NB! iga toiduainete grupi juures on toodud kohustuslikud kogused (nime all), mis sa pead ära sööma.
+4. Kui oled valiku teinud, siis vajutades nupule "Arvuta", saad söödud toidukogused kalorites.
+5. Koheselt tekib ka teade, mis ütleb kui palju veel sa võid süüa.
+6. Arvestatud on, et naisterahvas saab süüa 1700, kontorirotist meesterahvas aga 1800 kcalorit päevas. St, et kohustuslike portsjonite ja lubatud portsjonite vahe ongi see, mille ulatuses on sul võimalik "kõhnuda".
+7. Kui tarbid vastavalt 1700 või 1800 kcalorit, siis püsid olemasolevas kaalus
+8. Kui ekraanile tekib tekst "oled ületanud....xx kcalorit" (ja sa trenni ei lähe), siis arvesta, et paisud.
+
+Kui sa valikut "Mees" või "Naine" ei vali, siis saad küll teada, tarbitud kcalorite hulga, kuid kõike seda näidatakse nö ületarbimisena.
+
+Juhuks kui valisid valesti, on sul võimalik tühistada valik nupust "Tühista".
+Kui ei tea, mida teha, siis nupust "Kasutusjuhend" saad lugeda selgitusi.
+Aken sulgub nupust "Sulge"
 
 ##Muud märkmed
