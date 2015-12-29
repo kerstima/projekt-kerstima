@@ -1,4 +1,4 @@
-##Toidupäevik2
+##Toidupäevik
 
 See projekt on abiks kaalujälgimisel (ehk aitab:)
 Aluseks on võetud kaalujälgijate vana punktide lugemise süsteem, mille mõte on, et sa sööksid kõike ja ei näljutaks ennast mõttetult.
