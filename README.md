@@ -8,16 +8,19 @@ Aluseks on võetud kaalujälgijate vana punktide lugemise süsteem, mille mõte 
 ##Kasutusjuhend
 Akna avanemisel tuleb ette toiduainete nimekiri ja valikuvõimalused.
 
-*Kõigepealt valid kes sa kasutajana oled - st naine või mees (valiku tegemine on oluline, kuna päevane toiduainete vajadus on erinev).
+1. Kõigepealt valid kes sa kasutajana oled - st naine või mees (valiku tegemine on oluline, kuna päevane toiduainete vajadus on erinev).
 
-*Valid päeva jooksul söödud toiduained (klikid kastikestele).
+2. Valid päeva jooksul söödud toiduained (klikid kastikestele).
 
-*NB! iga toiduainete grupi juures on toodud kohustuslikud kogused (nime all), mis sa pead ära sööma.
-*Kui oled valiku teinud, siis vajutades nupule "Arvuta", saad söödud toidukogused kalorites.
-*Koheselt tekib ka teade, mis ütleb kui palju veel sa võid süüa.
-*Arvestatud on, et naisterahvas saab süüa 1700, kontorirotist meesterahvas aga 1800 kcalorit päevas. St, et kohustuslike portsjonite ja lubatud portsjonite vahe ongi see, mille ulatuses on sul võimalik "kõhnuda".
-*Kui tarbid vastavalt 1700 või 1800 kcalorit, siis püsid olemasolevas kaalus
-*Kui ekraanile tekib tekst "oled ületanud....xx kcalorit" (ja sa trenni ei lähe), siis arvesta, et paisud.
+3. NB! iga toiduainete grupi juures on toodud kohustuslikud kogused (nime all), mis sa pead ära sööma.
+
+4. Kui oled valiku teinud, siis vajutades nupule "Arvuta", saad söödud toidukogused kalorites. Koheselt tekib ka teade, mis ütleb kui palju veel sa võid süüa.
+
+5. Arvestatud on, et naisterahvas saab süüa 1700, kontorirotist meesterahvas aga 1800 kcalorit päevas. St, et kohustuslike portsjonite ja lubatud portsjonite vahe ongi see, mille ulatuses on sul võimalik "kõhnuda".
+
+6. Kui tarbid vastavalt 1700 või 1800 kcalorit, siis püsid olemasolevas kaalus.
+
+7. Kui ekraanile tekib tekst "oled ületanud....xx kcalorit" (ja sa trenni ei lähe), siis arvesta, et paisud.
 
 Kui sa valikut "Mees" või "Naine" ei vali, siis saad küll teada, tarbitud kcalorite hulga, kuid kõike seda näidatakse nö ületarbimisena.
 
