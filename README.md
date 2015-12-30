@@ -1,6 +1,6 @@
 #Toidupäevik
 
-Tehtud Polina Popova ja Kersti Maureri poolt (11-12.2015)
+Tehtud Polina Popova ja Kersti Maureri poolt (11-12.2015) IT Kolledži aine i200 Programmeerimise algkursus Java baasil (kaugõpe)
 
 ##Projekti kirjeldus
 See projekt on abiks kaalujälgimisel kõigile neile, kes soovivad kaalust alla võtta või soovitud kaalus püsida (ehk aitab:).
