@@ -32,7 +32,11 @@ Aken sulgub nupust "Sulge".
 
 ##Muud märkmed
 Kasutatud materjal:
+
 https://www.youtube.com/watch?v=SpL3EToqaXA (selgitava akna tööle saamiseks)
+
 https://www.youtube.com/watch?v=YtKF1JKtRWM (paar nippi gridPane-i mugandamiseks)
+
 https://www.youtube.com/watch?v=JWxnoe6APUY (ja abiks checkboxide tegemisel)
+
 ja muud küsimused http://stockoverflow.com/questions......ning muidugi GOOGLE:)
