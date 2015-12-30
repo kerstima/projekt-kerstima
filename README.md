@@ -1,5 +1,7 @@
 #Toidupäevik
 
+Tehtud Polina Popova ja Kersti Maureri poolt (11-12.2015)
+
 ##Projekti kirjeldus
 See projekt on abiks kaalujälgimisel kõigile neile, kes soovivad kaalust alla võtta või soovitud kaalus püsida (ehk aitab:).
 Aluseks on võetud kaalujälgijate vana punktide lugemise süsteem, mille mõte on, et sa sööksid kõike ja ei näljutaks ennast mõttetult.
