@@ -301,7 +301,7 @@ public class Tervitus {
             for (Sugu sugu : intValueCheckboxList1) {
                 sugu.setSelected(false);
                 sugu.setGraphic(null);
-
+                resultLabelYlesoodud.setText(null);
             }
         });
 
