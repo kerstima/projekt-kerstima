@@ -95,7 +95,7 @@ public class Tervitus {
         GridPane.setConstraints(Tera, 1, 3);
 
         Punnid box7 = new Punnid("leib, keskmine viil, 30 g", 80);
-        intValueCheckboxList.add(box1);
+        intValueCheckboxList.add(box7);
         GridPane.setConstraints(box7, 1, 4);
         Punnid box8 = new Punnid("makaronid keedetud, 100 ml", 80);
         intValueCheckboxList.add(box8);
