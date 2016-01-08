@@ -335,6 +335,7 @@ public class Tervitus {
         for (Sugu sugu : intValueCheckboxList1){
             if (sugu.isSelected()){
                 kogus = kogus + sugu.getValue();//võtab ülalt, sõltuvalt sellest, kas oled mees või naine maks lubatud koguse
+                resultLabelYlesoodud.setText(null);
             }
         }
         int jaak = 0;
