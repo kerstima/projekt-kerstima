@@ -302,6 +302,7 @@ public class Tervitus {
                 sugu.setSelected(false);
                 sugu.setGraphic(null);
                 resultLabelYlesoodud.setText(null);
+
             }
         });
 
@@ -342,6 +343,7 @@ public class Tervitus {
         int jaakule = 0;
         int total = 0;
 
+
         for (Punnid box : intValueCheckboxList) {
             if (box.isSelected()) {
                 total = total + box.getValue();//liidab valitud toiduainete kastide väärtused
@@ -361,6 +363,9 @@ public class Tervitus {
                     resultLabelSooveel.setText(null);
                 }
             }
+        }
+        if (kogus==0){
+            resultLabelYlesoodud.setText(null);
         }
     }
 }
