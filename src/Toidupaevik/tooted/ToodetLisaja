@@ -1,0 +1,19 @@
+package Toidupaevik.tooted;
+
+import Toidupaevik.Punnid;
+import javafx.scene.layout.GridPane;
+
+import java.util.List;
+
+
+public abstract class ToodetLisaja {
+
+    protected GridPane grid;
+
+    public ToodetLisaja(GridPane grid) {
+        this.grid = grid;
+    }
+
+    public abstract void lisaToodet(List<Punnid> punnidList, int column);
+
+}
