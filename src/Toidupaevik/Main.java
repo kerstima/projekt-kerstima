@@ -2,11 +2,14 @@ package Toidupaevik;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-//käivitab kogu programmi
+import Toidupaevik.Tervitus;
+
+
 public class Main extends Application {
 
 
     public static void main(String[] args) {
+
         launch(args);
     }
 
