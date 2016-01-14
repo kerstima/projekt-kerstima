@@ -1,0 +1,42 @@
+package Toidupaevik.tooted;
+
+import Toidupaevik.Punnid;
+import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
+
+import java.util.List;
+
+
+public class FruitToodetLisaja extends ToodetLisaja {
+
+    private Punnid[] punnidArrays = new Punnid[] {
+            new Punnid("apelsin, 1 keskmine", 60),
+            new Punnid("banaan, 1/2", 60),
+            new Punnid("greip, 1/2", 60),
+            new Punnid("õun, 1 keskmine", 60),
+            new Punnid("viinamarjad, 100g", 60),
+            new Punnid("nektariin,1 keskmine", 60),
+            new Punnid("pirn, 1 keskmine", 60),
+            new Punnid("ploom, 3 kesmist", 60),
+            new Punnid("marjad, 120g", 60),
+            new Punnid("kiivi,1 tk", 60)
+    };
+
+    public FruitToodetLisaja(GridPane grid) {
+        super(grid);
+    }
+
+
+    @Override
+    public void lisaToodet(List<Punnid> punnidList, int column) {
+        int row = 2;
+
+        grid.add(new Label("Puuviljad"), column, row++);
+        grid.add(new Label("3 portsu"), column, row++);
+
+        for (Punnid punn : punnidArrays) {
+            grid.add(punn, column, row++);
+            punnidList.add(punn);
+        }
+    }
+}
