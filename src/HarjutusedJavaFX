@@ -1,0 +1,173 @@
+//Slideri kasutamine
+public class Circle2 extends Application
+    {
+        @Override
+
+    public void start(Stage primaryStage)
+    {
+        Pane pane = new Pane();
+        Scene scene = new Scene(pane, 500, 500);
+
+        Circle circle = new Circle(250, 250, 0);//2 esimest panevad paika asukoha
+        circle.setStroke(Color.BLACK);
+
+        Slider slider = new Slider(0, 250, 0);
+        slider.setTranslateY(450);
+        slider.setTranslateX(350);
+        slider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            circle.setStrokeWidth(newValue.intValue());
+        });
+
+        pane.getChildren().addAll(slider, circle);
+
+
+        primaryStage.setScene(scene);
+        primaryStage.setOnCloseRequest(event -> System.exit(0));
+        primaryStage.show();
+    }
+}
+// nupuvajutuse variant
+public class Ellips2 extends Application {
+ public void start(Stage primaryStage) {
+
+  Pane pane = new Pane();
+  Scene scene = new Scene(pane, 500, 500);
+  primaryStage.setScene(scene);
+  primaryStage.show();
+
+  Ellipse ellipse = new Ellipse(250, 250, 100, 60);
+  ellipse.setStroke(Color.BLACK);
+  ellipse.setFill(null);
+  ellipse.setStrokeWidth(3);
+  Button button = new Button("Red");
+
+  pane.getChildren().addAll(ellipse, button);
+  button.setOnAction(e -> ellipse.setFill(Color.RED));
+ }
+}
+
+// hiirega joonistamine
+
+public class HiiregaJoonistamine extends Applet {
+  int x1=0, y1=0;
+  public void init() {
+    addMouseListener(new AlgusPunkt());
+    addMouseMotionListener(new JoonistaJoon());
+  }
+  protected void salvesta(int x, int y) {
+    x1 = x;
+    y1 = y;
+  }
+  private class AlgusPunkt extends MouseAdapter {
+    public void mouseEntered(MouseEvent event) {
+      requestFocus();
+      salvesta(event.getX(), event.getY());
+    }
+    public void mousePressed(MouseEvent event) {
+      salvesta(event.getX(), event.getY());
+    }
+  }
+  private class JoonistaJoon extends MouseMotionAdapter {
+    public void mouseDragged(MouseEvent event) {
+      int x = event.getX();
+      int y = event.getY();
+      Graphics g = getGraphics();
+      g.drawLine(x1, y1, x, y);
+      salvesta(x, y);
+    }
+  }
+}
+
+//teksti sisestus
+public class LauseSisestus2 extends Application{
+    @Override
+    public void start(Stage primaryStage){
+        VBox box = new VBox();
+        Scene scene = new Scene(box, 150, 150);
+        primaryStage.setScene(scene);
+        Label label = new Label("mingi");
+        TextField kirjuta = new TextField();
+        kirjuta.setOnAction(event -> {
+            String b = kirjuta.getText();
+            System.out.println(b);
+            label.setText(b);
+        });
+        box.getChildren().addAll(label, kirjuta);
+        primaryStage.show();
+    }
+}
+
+//URL kasutamine
+public class Url extends Application{
+    public void start(Stage primaryStage) {
+        Pane sp = new Pane();
+        Scene root = new Scene(sp, 500, 500);
+        primaryStage.setScene(root);
+        primaryStage.show();
+        WebView  browser = new WebView();
+        WebEngine engine = browser.getEngine();
+        String url = "http://zoranpavlovic.blogspot.com/";
+        engine.load(url);
+        sp.getChildren().add(browser);
+    }
+}
+
+//URL2
+public class Url2 extends Application {
+    @Override
+    public void start(Stage stage) {
+        BorderPane root = new BorderPane();
+        WebView view = new WebView();
+        root.setCenter(view);
+        final WebEngine engine = view.getEngine();
+        FlowPane flow = new FlowPane();
+        flow.setAlignment(Pos.CENTER);
+        root.setTop(flow);
+        Label label1 = new Label("This is link to");
+        Hyperlink link = new Hyperlink("http://google.co.jp/");
+        flow.getChildren().addAll(label1,link);
+        link.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                engine.load("http://google.co.jp/");
+            }
+        });
+        Scene scene = new Scene(root, 600, 800);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public static void main(String... args) {
+        launch(args);
+    }
+}
+
+//HTML editor
+
+public class HtmlEditor extends Application {
+    public void start (Stage primaryStage){
+        final HTMLEditor htmlEditor = new HTMLEditor();
+        Scene scene=new Scene(htmlEditor, 500, 500);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        }
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+
+// Pildi haaramine
+
+public class VeelOppimist extends Application{
+    public void start (Stage primaryStage){
+        Pane pane = new Pane();
+        Scene scene = new Scene(pane, 500, 500);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        Image image = new Image(getClass().getResourceAsStream("Frog1.png"));
+        ImageView imageView = new ImageView();
+        imageView.setImage(image);
+        Label label = new Label("Text", imageView);
+        label.setContentDisplay(ContentDisplay.CENTER);
+        pane.getChildren().addAll(label, imageView);
+    }
+    }
