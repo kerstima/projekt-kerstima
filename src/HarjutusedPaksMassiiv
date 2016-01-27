@@ -1,0 +1,93 @@
+
+public class PaksMassiivYhestKymneni {
+    public static void main(String[] args) {
+
+ // Tabel 1-10, iga rida algab järgmisest numbrist
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                System.out.printf("%3d", i + j);// sisuliselt võetud 10-ga jagamise jääk
+            }
+            System.out.println();
+        }
+        System.out.println("\n"); //tagab kahe tehte vahel tyhja rea
+
+ //0X0 maatriks
+        int tabeliSuurus = 11;
+        for (int j = 0; j < tabeliSuurus; j++) {
+            //tsyklis on number asendatud tekstiga, see võimaldab jooksvalt massiivi suurust muuta
+            for (int i = 0; i < tabeliSuurus; i++){ //oluline et sulu ja loogelise sulu vahel poleks semikoolonit- ei teki maatriksit
+                System.out.print("0 ");
+            }
+            System.out.println();
+        }
+        System.out.println("\n"); //tagab kahe tehte vahel tyhja rea
+
+ //0X0 maatriks tekib yhtedest vertikaalne või horisontaalne joon
+        int tabeliMaht = 9;
+        for (int j = 0; j < tabeliMaht; j++) {
+            //tsyklis on number asendatud tekstiga, see võimaldab jooksvalt massiivi suurust muuta
+            for (int i = 0; i < tabeliMaht; i++){ //oluline et sulu ja loogelise sulu vahel poleks semikoolonit- ei teki maatriksit
+                if (i==2) //tekkis vertikaalne joon, kui panna j==2, siis horisontaalne
+                System.out.printf("1 ");
+                else
+                    System.out.print("0 ");
+                //System.out.print("(j=" + j + "i=" + i + ")"); //abitrükk, mis näitas, mis koordinaatides toimub
+            }
+            System.out.println();
+        }
+        System.out.println("\n"); //tagab kahe tehte vahel tyhja rea
+
+//0X0 maatriks tekib yhtedest ja nullidest rist
+        int tabeliMaht2 = 9;
+        for (int j = 0; j < tabeliMaht2; j++) {
+            for (int i = 0; i < tabeliMaht2; i++){
+                if (i==2|| j==2) //tekkis rist
+                    System.out.printf("1 ");
+                else
+                    System.out.print("0 ");
+                }
+            System.out.println();
+        }
+        System.out.println("\n"); //tagab kahe tehte vahel tyhja rea
+
+ //0X0 maatriks tekib yhtedest ja nullidest triibuline
+        int tabeliMaht3 = 9;
+        for (int j = 0; j < tabeliMaht3; j++) {
+            for (int i = 0; i < tabeliMaht3; i++){
+                if (i % 2==0) //vertikaalsed triibud
+                    System.out.printf("1 ");
+                else
+                    System.out.print("0 ");
+            }
+            System.out.println();
+        }
+        System.out.println("\n"); //tagab kahe tehte vahel tyhja rea
+
+//0X0 maatriks tekib yhtedest diagonaal
+        int tabeliMaht4 = 9;
+
+        for (int j = 0; j < tabeliMaht4; j++) {
+            for (int i = 0; i < tabeliMaht4; i++){
+                if (i == j) //diagonaal
+                    System.out.printf("1 ");
+                else
+                    System.out.print("0 ");
+            }
+            System.out.println();
+        }
+        System.out.println("\n"); //tagab kahe tehte vahel tyhja rea
+
+  //0X0 maatriks tekib diagonaalidest risti
+        int tabeliMaht5 = 9;
+        for (int j = 0; j < tabeliMaht5; j++) {
+            for (int i = 0; i < tabeliMaht5; i++){
+                if (i == j|| i+j==8) //diagonaalidest rist (et aru saada , kust tuleb 8 vt abitabelit ja diagonaali yhisnimetajat
+                    System.out.printf("1 "); //p.s. vt, kui muudad liitmise summat, siis diagonaali asukoht muutub
+                else
+                    System.out.print("0 ");
+            }
+            System.out.println();
+        }
+        System.out.println("\n"); //tagab kahe tehte vahel tyhja rea
+    }
+}
