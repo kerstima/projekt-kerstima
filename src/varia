@@ -194,3 +194,55 @@ public class Sportlane {
         return vastus;
     }
 }
+
+public class Tellis {
+    public static void main (String[] param)
+    {
+        System.out.println(mahub(1, 9, 3, 4, 5));
+    }
+    public static boolean mahub (double a, double b, double c, double x, double y)    {
+        if((a <= x && b <= y) || (a <= y && b <= x)){
+            // külg ab mahub läbi
+            return true;
+        }
+        else if((c <= x && b <= y) || (c <= y && b <= x)){
+            // külg bc mahub läbi
+            return true;
+        }
+        else if((a <= x && c <= y) || (a <= y && c <= x)){
+            // külg ac mahub läbi
+            return true;
+        }
+        else return false;
+    }
+}
+
+public class TyhikuAsendamine {
+    public static void main (String[]args){
+        String s = "Tere tudeng, tore ARVUTI sul!";
+        String t = asenda(s);
+        System.out.println(s + ">" + t);
+    }
+    public static String asenda (String s){
+        String asenda = "";
+        for (int i=0;i<s.length(); i++){
+            if (Character.isWhitespace(s.charAt(i)))asenda+='-';
+            else
+                asenda += s.charAt(i);
+        }
+        return asenda;
+    }
+}
+
+public class Korrutustabel {
+   public static void main(String[] args) {
+      for (int i = 1; i <= 10; i++) {
+         for (int j = 1; j <= 10; j++) {
+            System.out.print(i * j);
+            System.out.print("\t");
+         }
+         System.out.println();
+      }
+   }
+}
+
