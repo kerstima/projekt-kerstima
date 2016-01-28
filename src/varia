@@ -65,3 +65,132 @@ public class MassiiviRuut {
             return  maatriks;
         }
     }
+
+public class MassiiviSuurimVaartus2 {
+    public static void main(String[] args){
+        int[] massiiv = {1, 3, 6, 7, 8, 3, 5, 7, 21, 3};
+        System.out.println(maxValue(massiiv));
+    }
+    public static int maxValue(int[] massiiv){
+        int max = Integer.MIN_VALUE;
+        for(int el : massiiv){
+            if(el > max){
+                max = el;
+            }
+        }
+        return max;
+    }
+}
+
+public class MeetodKuup {
+    public static void main (String[]args){
+        int arv = 4;
+        int arvKuubis = kuup (arv);
+        System.out.println(arvKuubis);
+    }
+    private static int kuup(int sisend) {
+        //System.out.println("kuup meetod töötab");
+        int tagastus = (int) Math.pow(sisend, 3); //kuna math.pow nõuab booleani, siis punase viskamisel vali cast int, see tekitab konverteri, so sulgudes int
+        return tagastus;
+    }
+}
+
+public class Pommitamine {
+    public static void main(String[] args) {
+        int[] laud = {randLaev(), randLaev(), randLaev(), randLaev(), randLaev(), randLaev(), randLaev()};
+        Scanner kasutaja = new Scanner(System.in);
+        while (!gameover(laud)) {
+            System.out.println(Arrays.toString(laud));
+            System.out.println("Sisesta number 1-"+laud.length);
+            int sisestus = kasutaja.nextInt() - 1;
+            int hit = laud[sisestus];
+            if (hit == 0) {
+                System.out.println("haha, mööda!");
+            } else if (hit == 2) {
+                System.out.println("kuule kuule, siia oled juba lasknud.");
+            } else if (hit == 1) {
+                System.out.println("Yea, pihtas!");
+                laud[sisestus] = 2;
+            }
+        }
+        System.out.println("Mäng läbi!");
+    }
+    public static int randLaev() {
+        int tulemus = (int) (Math.random() * 2);
+        return tulemus;
+    }
+    public static boolean gameover(int[] laud) {
+        for (int i = 0; i < laud.length; i++) {
+            if (laud[i] == 1) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+
+public class RuutuVotmine{
+    public static void main(String[] args) {
+        int algne = 5;
+        int aste = 2;
+        double aaste = Math.pow(5, 2);
+        int algneb = -5;
+        int asteb = 2;
+        double baste = Math.pow(-5, 2);
+        double ruutudeSumma = aaste+baste;
+        System.out.println(ruutudeSumma);
+    }
+public class SikSak2 {
+    public static void main(String[] args) {
+        int multi = 0;
+        for (int i = 0; i < 100; i++) {
+            if ((i % 18 == 0) && (i != 0))
+                multi = multi + 2;
+            for (int j = 0; j < 10; j++) {
+                if ((i - (9 * multi)) == j || j==((18 + 9 * multi)-i))
+                    System.out.printf("x ");
+                else
+                    System.out.printf("0 ");
+            }
+            System.out.println();
+        }
+    }
+}
+}
+
+public class SisestuseKysija {
+    public static void main(String[] args){
+        // loon skänneri
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Sisesta s6na");
+        // saan kasutajalt s6na:
+        String word = sc.nextLine();
+        //prindin s6na v2lja tagurpidi:
+        for (int i = word.length()-1; i >= 0; i--){
+            System.out.print(word.charAt(i));
+        }
+        sc.close();
+    }
+}
+
+
+public class Sportlane {
+    public static void main (String[]args){
+        System.out.println(result(new double[]{0.,1.,2.,3.,4.}));
+    }
+    public static double result(double[]marks){
+        double[]mingi = new double[marks.length];
+        for (int i=0; i<marks.length; i++){
+            mingi[i]=marks[i];
+        }
+        Arrays.sort(mingi);
+        double sum = 0;
+        double vastus = 0;
+        for (int i = 1; i<mingi.length-1;i++){
+            sum +=mingi[i];
+        }
+        vastus=sum/(mingi.length-2);
+        return vastus;
+    }
+}
