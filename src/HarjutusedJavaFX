@@ -171,3 +171,5 @@ public class VeelOppimist extends Application{
         pane.getChildren().addAll(label, imageView);
     }
     }
+
+// veel midagi
