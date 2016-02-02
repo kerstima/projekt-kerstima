@@ -1,0 +1,36 @@
+public class Liivakell {
+
+        public static void main(String[] args) {
+            // Lihtsalt abiline meetod, et maatriksit välja printida
+            int[][] laud = new int[20][20];
+            printMaatriks(laud);
+        }
+        private static void printMaatriks ( int[][] laud){
+            for (int i = -laud.length; i <= laud.length; i++) {
+                for (int j = -laud[0].length; j <= laud[0].length; j++) {
+                    if (i * i <= j * j) System.out.print(0);
+                    else System.out.print(".");
+                }
+                System.out.println();
+            }
+        }
+    }
+    
+    public class Kikilips2 {
+
+        public static void main(String[] args) {
+            String [][] maatriks = new String[9][9];
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    if (i+j<9 && i-j>=0) {
+                        maatriks[i][j] = "0";
+                    } else if (i+j>=8 && i-j<=0) {
+                        maatriks[i][j] = "0";
+                    } else {
+                        maatriks[i][j] = " ";
+                    }
+                }
+                System.out.println(Arrays.toString(maatriks[i]));
+            }
+        }
+    }
