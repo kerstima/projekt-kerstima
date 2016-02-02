@@ -1,0 +1,52 @@
+public class Lumehelves  extends Application {
+
+        private Canvas canvas;
+        public static void main(String[] args) {
+            launch(args);
+        }
+
+        @Override
+        public void start(Stage primaryStage) {
+            primaryStage.setTitle("JavaFX-iga joonistamise näide");
+
+            canvas = new Canvas(400, 400);
+            GraphicsContext gc = canvas.getGraphicsContext2D();
+
+            Group root = new Group();
+            joonista(gc);
+            root.getChildren().add(canvas);
+
+            VBox drawing = new VBox();
+            drawing.getChildren().addAll(canvas);
+            drawing.setAlignment(Pos.CENTER);
+
+            Scene scene = new Scene(drawing, 400, 400);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
+
+        private void joonista(GraphicsContext g) {
+            int r = 100; // Raadius
+
+            // Kysime kui suur aken on?
+            int w = (int) this.canvas.getWidth();
+            int h = (int) this.canvas.getHeight();
+
+            int x0 = Math.round(w / 2); // Keskpunkt
+            int y0 = Math.round(h / 2);
+            int x, y;
+            double t;
+            // Ta"idame tausta
+            g.setFill(Color.WHITE);
+            g.fillRect(0, 0, w, h);
+
+            // Joonistame
+            g.setFill(Color.BLACK);
+
+            for (t = -Math.PI; t < Math.PI; t = t + Math.PI / 16) {
+                x = (int) (r * Math.cos(t) + x0);
+                y = (int) (r * Math.sin(t) + y0);
+                g.strokeLine(x0, y0, x, y);
+            }
+        }
+    }
