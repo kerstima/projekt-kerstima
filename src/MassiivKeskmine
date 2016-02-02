@@ -1,0 +1,19 @@
+public class MassiiviKeskmine {
+    public static void main(String[] args) {
+        System.out.println(tulemus( new int[] {7, 45, 34, 21, 56, 7, 4}));
+    }
+
+    private static int tulemus(int[] ints) {
+        int mingi = 14;
+        for (int i = 0; i <ints.length ; i++) {
+            if (ints[i]==7){
+                ints[i]=mingi;
+            }
+        }
+        int sum = IntStream.of(ints).sum();
+        System.out.println("Massiivi summ" + sum);
+        int keskmine = sum/ints.length;
+        System.out.println("keskmine = "+ keskmine);
+        return keskmine;
+    }
+}
