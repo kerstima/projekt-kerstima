@@ -172,4 +172,65 @@ public class VeelOppimist extends Application{
     }
     }
 
-// veel midagi
+// package paevik;
+
+import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.effect.Lighting;
+import javafx.scene.input.*;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+
+//
+public class HiiregaLiigutamine extends Application {
+    public void start(Stage primaryStage) {
+        Pane pane = new Pane();
+        Scene scene = new Scene(pane, 500, 500);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+        final Rectangle rect = new Rectangle(10, 10, 10, 10);
+        rect.setFill(Color.DARKMAGENTA);
+        rect.setTranslateX(200);
+        rect.setTranslateY(200);
+        pane.getChildren().addAll(rect);
+
+//liigub klikiga
+/*rect.setOnMousePressed(new EventHandler<MouseEvent>() {
+    @Override
+    public void handle(MouseEvent event) {
+        if (event.isPrimaryButtonDown()) {
+            rect.setTranslateX(rect.getTranslateX()+20);
+            rect.setTranslateY(rect.getTranslateY()+20);
+        }  event.consume();
+    }
+});*/
+
+
+//hiirega üles-alla liigutamine
+       /* rect.setOnScroll(new EventHandler<ScrollEvent>() {
+            @Override
+            public void handle(ScrollEvent event) {
+                if (!event.isInertia()) {
+                    rect.setTranslateX(rect.getTranslateX() + event.getDeltaX());
+                    rect.setTranslateY(rect.getTranslateY() + event.getDeltaY());
+                }
+                event.consume();
+            }
+        });*/
+// hiirega vedamine
+        rect.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if(!event.isControlDown()){
+                    rect.setTranslateX(event.getSceneX());
+                    rect.setTranslateY(event.getScreenY());
+                }
+            }
+        });
+    }
+}
