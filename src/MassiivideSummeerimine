@@ -1,0 +1,47 @@
+public class MassSummeerimine {
+
+    public static void main(String[] args){
+        int[][] matrix = {
+                {1,2,3},
+                {1,5},
+                {5,8,4,8,9}
+        };
+        int[] summad = veeruSummad(matrix);
+        printMatrix(matrix);
+        System.out.println();
+        for (int element : summad){
+            System.out.print(element + " ");
+        }
+    }
+
+    public static int[] veeruSummad (int[][] m){
+        int[] summad = new int[maxReaPikkus(m)];
+        for (int i = 0; i < m.length; i++){
+            for (int j = 0; j < m[i].length; j++){
+                summad[j] += m[i][j];
+            }
+        }
+        return summad;
+    }
+
+    public static int maxReaPikkus(int[][] massiiv){
+        int max = Integer.MIN_VALUE;
+        for (int[] row : massiiv){
+            if (row.length > max){
+                max = row.length;
+            }
+        }
+        return max;
+    }
+
+    public static void printMatrix(int[][] massiiv){
+        //iga massiivi rea veergude kohta
+        for (int x = 0; x < massiiv.length; x++ ){
+            // iga massiivi veeru x elemendi kohta
+            for(int y = 0; y < massiiv[x].length; y++){
+                System.out.printf("%2d ", massiiv[x][y]);
+            }
+            System.out.println();
+        }
+    }
+}
