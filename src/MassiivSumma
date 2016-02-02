@@ -1,0 +1,16 @@
+public class ElementideSumma {
+
+    public static void main(String[] args) {
+        // sedasi saab meetodi välja kutsuda
+        int summa = summa(new int[] {4, 3, 1, 7, -1});
+        System.out.println(summa);
+    }
+
+    public static int summa(int[] massiiv) {
+        int summa = 0;
+        for (int i = 0; i < massiiv.length; i++){
+            summa += massiiv[i];
+        }
+        return summa;
+    }
+}
