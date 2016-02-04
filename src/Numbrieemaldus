@@ -1,0 +1,12 @@
+ public static void main(String[] args) {
+
+        int[] naide = {1, 5, 3, 3, 6, 3, 7, 7}; // vastus on 7
+        List<Integer> listNaide = new ArrayList<Integer>();
+        for (int i = 0; i < naide.length; i++) {
+            listNaide.add(naide[i]);
+        }
+           listNaide.remove(5);
+        listNaide.remove(3);
+        listNaide.remove(2);
+        System.out.println(listNaide);
+        }
